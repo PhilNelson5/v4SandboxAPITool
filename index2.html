@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sandbox API Tool - V3</title>
+        <title>Sandbox API Tool - V4</title>
         <meta charset="UTF-8"> 
         <script src= "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!--<script src="https://collectorsvc.ecustomersupport.com/DCCSProxy/Service/vdccs.js?AccountName=VestaTest&WebSessionID=101_234"></script>-->
@@ -9,7 +9,7 @@
      </head>
     <body>
         <div id="layout">
-            <div id="header">Vesta V3 ECl Test API Tool</div>
+            <div id="header">Vesta V4 Test API Tool</div>
             <a href="index2.html">Index Page</a>
             <a href="dataCollector.php">Page 2</a>
             <div id="navbar">
@@ -36,6 +36,12 @@
                                         <option value="GetSessionTags">Get Session Tags</option>
                                         <option value="ReversePayment">Reverse Payment</option>
                                         <option value="ReverseCheckPayment">Reverse Check Payment</option>
+                                    </optgroup>
+                                    <optgroup label="Unbundled API Calls">
+                                        <option value="AuthResult">Auth Result</option>
+                                        <option value="ChargePaymentRequest">Charge Payment Request</option>
+                                        <option value="Disposition">Disposition</option>
+                                        <option value="GuaranteePayment">Guarantee Payment</option>
                                     </optgroup>
                                     <optgroup label="Knowledge-Based Authentication API Calls">
                                         <option value="ChallengeQuestionAnswer">Challenge Question Answer</option>
@@ -94,6 +100,9 @@
                                             </div>
                                             <div id="answerNumber">
                                                 <label class="requiredred" for="AnswerNumber">Answer Number:</label> <input type="number" id="AnswerNumber" name="AnswerNumber" />
+                                            </div>
+                                            <div id="autoDisposition">
+                                                <label class="requiredred" for="AutoDisposition">Auto Disposition:</label> <input type="checkbox" id="AutoDisposition" name="AutoDisposition" value="true"/>
                                             </div>
                                             <div id="bankRoutingNumber">
                                                 <label class="requiredred" for="BankRoutingNumber">Bank Routing Number:</label> <input type="number" id="BankRoutingNumber" name="BankRoutingNumber" />
@@ -197,7 +206,7 @@
                                             <div id="checkPhoneNumber">
                                                 <label class="optional" for="CheckPhoneNumber">Check Phone Number:</label> <input type="text" id="CheckPhoneNumber" name="CheckPhoneNumber" />
                                             </div>
-<div id="checkSource">
+                                            <div id="checkSource">
                                                 <label class="requiredred" for="CheckSource">Check Source (PPD, TEL, WEB)</label> <input type="text" id="CheckSource" name="CheckSource" />
                                             </div>
                                             <div id="checkType">
@@ -227,6 +236,12 @@
                                             <div id="debitSource">
                                                 <label class="requiredred" for="DebitSource">Debit Source:</label> <input type="text" id="DebitSource" name="DebitSource" />
                                             </div>
+                                            <div id="dispositionReason">
+                                                <label class="requiredred" for="DispositionReason">Disposition Reason:</label> <input type="text" id="DispositionReason" name="DispositionReason" />
+                                            </div>
+                                            <div id="dispositionType">
+                                                <label class="requiredred" for="DispositionType">Disposition Type:</label> <input type="text" id="DispositionType" name="DispositionType" />
+                                            </div>
                                             <div id="encryptionBlock">
                                                 <label class="optional" for="EncryptionBlock">Encryption Block</label> <input type="text" id="EncryptionBlock" name="EncryptionBlock" />
                                             </div>
@@ -253,7 +268,7 @@
                                                 <label class="optional" for="MerchantDeviceDescriptor">Merchant Device Descriptor:</label> <input type="text" id="MerchantDeviceDescriptor" name="MerchantDeviceDescriptor" />
                                             </div>
                                             <div id="merchantRoutingID">
-                                                <label class="optional" for="MerchantRoutingID">Merchant Routing ID:</label> <input type="text" id="MerchantRoutingID" name="MerchantRoutingID" />
+                                                <label class="requiredred" for="MerchantRoutingID">Merchant Routing ID:</label> <input type="text" id="MerchantRoutingID" name="MerchantRoutingID" />
                                             </div>
                                             <div id="monthOfBirth">
                                                 <label class="optional" for="MonthOfBirth">Month of Birth:</label> <input type="text" id="MonthOfBirth" name="MonthOfBirth" />
@@ -313,7 +328,7 @@
                                                 <label class="requiredred" for="ReportRequestDate">Report Request Date:</label> <input type="date" id="ReportRequestDate" name="ReportRequestDate" />
                                             </div>
                                             <div id="riskInformation">
-                                                <label class="optional" for="RiskInformation">Risk Information Blob</label> <input type="text" id="RiskInformation" name="RiskInformation" />
+                                                <label class="requiredred" for="RiskInformation">Risk Information Blob</label> <input type="text" id="RiskInformation" name="RiskInformation" />
                                             </div>
                                             <div id="scheduledFileReportType">
                                                 <label class="requiredred" for="ScheduledFileReportType">Scheduled File Report Type:</label> <input type="text" id="ScheduledFileReportType" name="ScheduledFileReportType" />
@@ -343,7 +358,7 @@
                                                 <label class="requiredred" for="WalletID">Wallet ID:</label> <input type="number" id="WalletID" name="WalletID" />
                                             </div>                    
                                             <div id="webSessionID">
-                                                <label class="optional" for="WebSessionID">Web Session ID:</label> <input type="text" id="WebSessionID" name="WebSessionID" />
+                                                <label class="requiredred" for="WebSessionID">Web Session ID:</label> <input type="text" id="WebSessionID" name="WebSessionID" />
                                             </div>
                                             <div id="yearOfBirth">
                                                 <label class="optional" for="YearOfBirth">Year of Birth:</label> <input type="text" id="YearOfBirth" name="YearOfBirth" />
@@ -378,7 +393,25 @@
         <script type="text/javascript">
             function handleSelection(choice) {
                 console.log('What was selected: ' + choice);
-                if (choice === 'BankAccountToTemporaryToken') {
+                if (choice === 'AuthResult') {
+                    console.log('Inside Auth Result');
+                    $(".hidden > *").css('display', 'none');
+
+                    $("#accountName").show();
+                    $("#acquirerAuthResultCode").show();
+                    $("#acquirerAVSResultCode").show();
+                    $("#acquirerCVNResultCode").show();
+                    $("#acquirerApprovalCode").show();
+                    $("#acquirerTransactionID").show();
+                    $("#acquirerCD").show();
+                    $("#authorizedAmount").show();
+                    $("#password").show();
+                    $("#paymentID").show();
+                    $("#transactionID").show();
+                    
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'BankAccountToTemporaryToken') {
                     console.log('Inside BankAccountToTemporaryToken');
                     $(".hidden > *").css('display', 'none');
 
@@ -476,6 +509,43 @@
                     $("#encryptionTarget").show();
                     $("#merchantRoutingID").show();
                     $("#password").show();
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'ChargePaymentRequest') {
+                    console.log('Inside Charge Payment Request');
+                    $(".hidden > *").css('display', 'none');
+
+                    $("#accountName").show();
+                    $("#additionalAmounts").show();
+                    $("#additionalAmountType").show();
+                    $("#autoDisposition").show();
+                    $("#cardHolderAddressLine1").show();
+                    $("#cardHolderAddressLine2").show();
+                    $("#cardHolderCity").show();
+                    $("#cardHolderCountryCode").show();
+                    $("#cardHolderFirstName").show();
+                    $("#cardHolderLastName").show();
+                    $("#cardHolderPostalCode").show();
+                    $("#cardHolderRegion").show();
+                    $("#chargeAccountNumberToken").show();
+                    $("#chargeAccountNumber").show();
+                    $("#chargeAccountNumberIndicator").show();
+                    $("#chargeAmount").show();
+                    $("#chargeCVN").show();
+                    $("#chargeSale").show();
+                    $("#chargeExpirationMMYY").show();
+                    $("#chargeSource").show();
+                    $("#createdByUser").show();
+                    $("#merchantRoutingID").show();
+                    $("#partnerCustomerKey").show();
+                    $("#password").show();
+                    $("#paymentDescriptor").show();
+                    $("#reportingInformation").show();
+                    $("#riskInformation").show();
+                    $("#shipToZip").show();
+                    $("#storeCard").show();
+                    $("#transactionID").show();
+                    $("#webSessionID").show();
                     document.getElementById('container1').style.display = "block";
                 }
                 else if (choice === 'ChargeSale')
@@ -710,6 +780,20 @@
                     
                     document.getElementById('container1').style.display = "block";
                 }
+                else if (choice === 'Disposition') {
+                    console.log('Disposition API');
+                    $(".hidden > *").css('display', 'none');
+
+                    $("#accountName").show();
+                    $("#chargeAmount").show();
+                    $("#dispositionReason").show();
+                    $("#dispositionType").show();
+                    $("#password").show();
+                    $("#paymentID").show();
+                    $("#transactionID").show();
+
+                    document.getElementById('container1').style.display = "block";
+                }
                 else if (choice === 'DownloadReportFile') {
                     $(".hidden > *").css('display', 'none');
 
@@ -745,6 +829,16 @@
                     $("#accountName").show();
                     $("#password").show();
                     $("#transactionID").show();
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'GuaranteePayment')
+                {
+                    $(".hidden > *").css('display', 'none');
+                    $("#accountName").show();
+                    $("#password").show();
+                    $("#paymentID").show();
+                    $("#transactionID").show();
+
                     document.getElementById('container1').style.display = "block";
                 }
                 else if (choice === 'HeartBeat')

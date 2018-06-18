@@ -25,7 +25,10 @@ require('helpers.php');
 //Strip empty tags from array because sandbox runs validation on these even if they are empty
 $_POST = array_filter( $_POST, 'strlen' );
 
-if (isset($_POST["api_method"]) AND $_POST["api_method"] == "BankAccountToTemporaryToken") {
+if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/AuthResult';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "BankAccountToTemporaryToken") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/BankAccountToTemporaryToken';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChallengeQuestionAnswer") {
@@ -44,6 +47,9 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "BankAccountToTempor
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargeGetPaymentDeviceInfo") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChargeGetPaymentDeviceInfo';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargePaymentRequest") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChargePaymentRequest';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargeSale") {
     callChargeSale($_POST);
@@ -68,6 +74,9 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "BankAccountToTempor
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "DebitSale") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/DebitSale';
     executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "Disposition") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/Disposition';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "DownloadReportFile") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/DownloadReportFile';
     executeAPICall($_POST, $url, $_POST["api_method"]);
@@ -79,6 +88,9 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "BankAccountToTempor
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetSessionTags") {
     getSessionTags($_POST);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GuaranteePayment") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GuaranteePayment';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "HeartBeat") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/HeartBeat';
     executeAPICall($_POST, $url, $_POST["api_method"]);
