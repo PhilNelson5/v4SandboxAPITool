@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <?php
 require('helpers.php');
-
 //V3 Sandbox Credentials
 //mRYWVKNP5/ZdpmwPqzyQJg== - Not Active
 //JUqOKCzErOH0FCucUwCc+bVVyahoTuuSsSD+7S3GCOnmXN3vZhO2gRjzaurWRPOW - Not Active
 //mX8T+FPyLAgFgQwjgDGcNw==
 //6JavoWXScFmMI8Olwu7jyJqGCdTOwHrzBSzTPyBijDrTCVtwQWk/tZG+m2b7H3WY
 //F6OFEMEE
+
+//UNBUNDLED SANDBOX CREDENTIALS
+//HeCuC75J3s0c938T37KoBw== 
+//gRNLB7d/OHw4vBX5z7xeWHZIRgK11WaABJRQS6VCQ3NAJtDUPVNeDeK+mvQILozR
 
 //https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service
 //https://vsafesandboxtoken.ecustomersupport.com/GatewayV4ProxyJSON/Service
@@ -19,8 +22,6 @@ require('helpers.php');
 // Success: 5133040901320015
 //temp token: 5133800000000036
 //perm token: 5133900000000034
-
-//vSafe Sandbox Test cards and Use cases:  https://vestawiki/pages/viewpage.action?pageId=90935117
 
 //Strip empty tags from array because sandbox runs validation on these even if they are empty
 $_POST = array_filter( $_POST, 'strlen' );
@@ -38,7 +39,6 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChallengeQuestionBegin';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargeAccountToTemporaryToken") {
-    debug_to_console('WHAT THE FUFHFHFHF:', $_POST);
     getToken($_POST);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargeAuthorize") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChargeAuthorize';
@@ -307,7 +307,6 @@ debug_to_console('Is FingerPrint HERE:', $_DATA);
                 $dataCollector = sprintf('<script src="https://collectorsvc.ecustomersupport.com/DCCSProxy/Service/vdccs.js?AccountName=%1$s&WebSessionID=%2$s"></script>'
                 , $HardCodedAccount
                 , $result['WebSessionID']);
-//        debug_to_console('DataCollector string to embed in page:', $dataCollector);
                 echo $dataCollector;
         
     } else {
