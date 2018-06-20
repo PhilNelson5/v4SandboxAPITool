@@ -16,7 +16,7 @@ require('helpers.php');
 //MerchantRoutingID	CNP Debit	SandboxDebit01
 
 //Cards;
-    // Success: 5133040901320015
+// Success: 5133040901320015
 //temp token: 5133800000000036
 //perm token: 5133900000000034
 
@@ -38,6 +38,7 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChallengeQuestionBegin';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargeAccountToTemporaryToken") {
+    debug_to_console('WHAT THE FUFHFHFHF:', $_POST);
     getToken($_POST);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargeAuthorize") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChargeAuthorize';
@@ -366,7 +367,8 @@ function getToken($PostData) {
 
     $payload = array(
         'AccountName' => $PostData['AccountName'],
-        'ChargeAccountNumber' => $PostData['ChargeAccountNumber']
+        'ChargeAccountNumber' => $PostData['ChargeAccountNumber'],
+        'AccountNumber' => $PostData['AccountNumber']
     );
     debug_to_console('Only call with Accountname and Card Number:', $payload);
     $query = http_build_query($payload);
@@ -409,9 +411,11 @@ function callChargeSale($_data) {
 
 function debug_to_console($message, $data) {
     if (is_array($data) || is_object($data)) {
-        echo("<script>console.log('PHP: $message " . json_encode($data) . "');</script>");
+        echo "<script>console.log(".json_encode($message).")</script>";
+        echo "<script>console.log(".json_encode($data).")</script>";
     } else {
-        echo("<script>console.log('PHP: $message" . $data . "');</script>");
+        echo "<script>console.log(".json_encode($message).")</script>";
+        echo "<script>console.log(".json_encode($data).")</script>";
     }
 }
 

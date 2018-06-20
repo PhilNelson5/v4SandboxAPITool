@@ -77,17 +77,74 @@
                                 <div id="footer">
                                     <fieldset>
                                         <div id="container1" class="hidden">
-<!--                                            <input type="hidden" name="Fingerprint" id="Fingerprint">
-                                                <script type="text/javascript">
-                                                    var io_bbout_element_id = "Fingerprint";
-                                                    var io_exclude_stm = 15;
-                                                    var io_install_stm = false;
-                                                    var io_install_flash = false;
-                                                    var io_enable_rip = true;
-                                                </script>
-                                            <script type="text/javascript" src="https://mpsnare.iesnare.com/snare.js"> </script>-->
+                                            <div id="accountHolderAddressLine1">
+                                                <label class="requiredred" for="AccountHolderAddressLine1">Address Line 1:</label> <input type="text" id="AccountHolderAddressLine1" name="AccountHolderAddressLine1" />
+                                            </div>
+                                            <div id="accountHolderAddressLine2">
+                                                <label class="optional" for="AccountHolderAddressLine2">Address Line 2:</label> <input type="text" id="AccountHolderAddressLine2" name="AccountHolderAddressLine2" />
+                                            </div>
+                                            <div id="accountHolderCity">
+                                                <label class="requiredred" for="AccountHolderCity">City:</label> <input type="text" id="AccountHolderCity" name="AccountHolderCity" />
+                                            </div>
+                                            <div id="accountHolderCountryCode">
+                                                <label class="requiredred" for="AccountHolderCountryCode">Country Code:</label> <input type="text" id="AccountHolderCountryCode" name="AccountHolderCountryCode" />
+                                            </div>
+                                            <div id="accountHolderFirstName">
+                                                <label class="requiredred" for="AccountHolderFirstName">First Name:</label> <input type="text" id="AccountHolderFirstName" name="AccountHolderFirstName" />
+                                            </div>
+                                            <div id="accountHolderLastName">
+                                                <label class="requiredred" for="AccountHolderLastName">Last Name:</label> <input type="text" id="AccountHolderLastName" name="AccountHolderLastName" />
+                                            </div> 
+                                            <div id="accountHolderPostalCode">
+                                                <label class="requiredred" for="AccountHolderPostalCode">Postal Code:</label> <input type="text" id="AccountHolderPostalCode" name="AccountHolderPostalCode" />
+                                            </div> 
+                                            <div id="accountHolderRegion">
+                                                <label class="requiredred" for="AccountHolderRegion">Region:</label> <input type="text" id="AccountHolderRegion" name="AccountHolderRegion" />
+                                            </div>
+                                            <div id="cardTrack1Data">
+                                                <label class="optional" for="CardTrack1Data">Card Track1 Data:</label> <input type="text" id="CardTrack1Data" name="CardTrack1Data" />
+                                            </div>
+                                            <div id="cardTrack2Data">
+                                                <label class="optional" for="CardTrack2Data">Card Track2 Data:</label> <input type="text" id="CardTrack2Data" name="CardTrack2Data" />
+                                            </div>
+                                            <div id="cardTypeIndicator">
+                                                <label class="requiredred" for="CardTypeIndicator">Card Type Indicator (1,2,3):</label> <input type="text" id="CardTypeIndicator" name="CardTypeIndicator" />
+                                            </div>
+                                            <div id="chargeAccountNumberToken">
+                                                <label class="requiredred" for="ChargeAccountNumberToken">Charge Account Token:</label> <input type="text" id="ChargeAccountNumberToken" name="ChargeAccountNumberToken" />
+                                            </div>
+                                            <div id="chargeAccountNumber">
+                                                <label class="requiredred" for="ChargeAccountNumber">Credit Card Number(ChargeAccount):</label> <input type="text" id="ChargeAccountNumber" name="ChargeAccountNumber" />
+                                            </div>
+                                            <div id="chargeAccountNumberIndicator">
+                                                <label class="requiredred" for="ChargeAccountNumberIndicator">Charge Account Number Indicator:</label> <input type="number" id="ChargeAccountNumberIndicator" name="ChargeAccountNumberIndicator" />
+                                            </div>
                                              <div id="accountName">
                                                 <label class="requiredred" for="AccountName">Account Name:</label> <input type="text" id="AccountName" name="AccountName" />
+                                            </div>
+                                            <div id="accountNumber">
+                                                <label class="requiredred" for="AccountNumber">Credit Card Number:</label> <input type="text" id="AccountNumber" name="AccountNumber" />
+                                            </div>
+                                            <div id="accountNumberIndicator">
+                                                <label class="requiredred" for="AccountNumberIndicator">Charge Account Number Indicator:</label> <input type="number" id="AccountNumberIndicator" name="AccountNumberIndicator" />
+                                            </div>
+                                            <div id="acquirerCD">
+                                                <label class="requiredred" for="AcquirerCD">Acquirer Code:</label> <input type="number" id="AcquirerCD" name="AcquirerCD" />
+                                            </div>
+                                            <div id="acquirerApprovalCode">
+                                                <label class="requiredred" for="AcquirerApprovalCode">Acquirer Approval Code:</label> <input type="text" id="AcquirerApprovalCode" name="AcquirerApprovalCode" />
+                                            </div>
+                                            <div id="acquirerAuthResultCode">
+                                                <label class="requiredred" for="AcquirerAuthResultCode">Acquirer Auth Result Code:</label> <input type="text" id="AcquirerAuthResultCode" name="AcquirerAuthResultCode" />
+                                            </div>
+                                            <div id="acquirerAVSResultCode">
+                                                <label class="requiredred" for="AcquirerAVSResultCode">Acquirer AVS Result Code:</label> <input type="text" id="AcquirerAVSResultCode" name="AcquirerAVSResultCode" />
+                                            </div>
+                                            <div id="acquirerCVNResultCode">
+                                                <label class="requiredred" for="AcquirerCVNResultCode">Acquirer CVN Result Code:</label> <input type="text" id="AcquirerCVNResultCode" name="AcquirerCVNResultCode" />
+                                            </div>
+                                            <div id="acquirerTransactionID">
+                                                <label class="requiredred" for="AcquirerTransactionID">Acquirer Transaction ID:</label> <input type="text" id="AcquirerTransactionID" name="AcquirerTransactionID" />
                                             </div>
                                             <div id="additionalAmounts">
                                                 <label class="requiredred" for="AdditionalAmounts">Additional Amount:</label> <input type="text" id="AdditionalAmounts" name="AdditionalAmounts" />
@@ -96,10 +153,13 @@
                                                 <label class="requiredred" for="AdditionalAmountType">Additional Amount Type:</label> <input type="text" id="AdditionalAmountType" name="AdditionalAmountType" />
                                             </div>
                                             <div id="amount">
-                                                <label class="requiredred" for="Amount">CP Refund Amount:</label> <input type="text" id="Amount" name="Amount" />
+                                                <label class="requiredred" for="Amount">Amount:</label> <input type="text" id="Amount" name="Amount" />
                                             </div>
                                             <div id="answerNumber">
                                                 <label class="requiredred" for="AnswerNumber">Answer Number:</label> <input type="number" id="AnswerNumber" name="AnswerNumber" />
+                                            </div>
+                                            <div id="authorizedAmount">
+                                                <label class="requiredred" for="AuthorizedAmount">Authorized Amount:</label> <input type="text" id="AuthorizedAmount" name="AuthorizedAmount" />
                                             </div>
                                             <div id="autoDisposition">
                                                 <label class="requiredred" for="AutoDisposition">Auto Disposition:</label> <input type="checkbox" id="AutoDisposition" name="AutoDisposition" value="true"/>
@@ -130,24 +190,6 @@
                                             </div> 
                                             <div id="cardHolderRegion">
                                                 <label class="requiredred" for="CardHolderRegion">Region:</label> <input type="text" id="CardHolderRegion" name="CardHolderRegion" />
-                                            </div>
-                                            <div id="cardTrack1Data">
-                                                <label class="optional" for="CardTrack1Data">Card Track1 Data:</label> <input type="text" id="CardTrack1Data" name="CardTrack1Data" />
-                                            </div>
-                                            <div id="cardTrack2Data">
-                                                <label class="optional" for="CardTrack2Data">Card Track2 Data:</label> <input type="text" id="CardTrack2Data" name="CardTrack2Data" />
-                                            </div>
-                                            <div id="cardTypeIndicator">
-                                                <label class="requiredred" for="CardTypeIndicator">Card Type Indicator (1,2,3):</label> <input type="text" id="CardTypeIndicator" name="CardTypeIndicator" />
-                                            </div>
-                                            <div id="chargeAccountNumberToken">
-                                                <label class="requiredred" for="ChargeAccountNumberToken">Charge Account Token:</label> <input type="text" id="ChargeAccountNumberToken" name="ChargeAccountNumberToken" />
-                                            </div>
-                                            <div id="chargeAccountNumber">
-                                                <label class="requiredred" for="ChargeAccountNumber">Credit Card Number:</label> <input type="text" id="ChargeAccountNumber" name="ChargeAccountNumber" />
-                                            </div>
-                                            <div id="chargeAccountNumberIndicator">
-                                                <label class="requiredred" for="ChargeAccountNumberIndicator">Charge Account Number Indicator:</label> <input type="number" id="ChargeAccountNumberIndicator" name="ChargeAccountNumberIndicator" />
                                             </div>
                                             <div id="chargeAmount">
                                                 <label class="requiredred" for="ChargeAmount">Charge Amount:</label> <input type="text" id="ChargeAmount" name="ChargeAmount" />
@@ -215,6 +257,9 @@
                                             <div id="createdByUser">
                                                 <label class="optional" for="CreatedByUser">Created by User:</label> <input type="text" id="CreatedByUser" name="CreatedByUser" />
                                             </div>
+                                            <div id="CVN">
+                                                <label class="optional" for="CVN">Charge CVN:</label> <input type="number" id="CVN" name="CVN" />
+                                            </div>
                                             <div id="dayOfBirth">
                                                 <label class="optional" for="DayOfBirth">Day of Birth:</label> <input type="text" id="DayOfBirth" name="DayOfBirth" />
                                             </div>
@@ -236,8 +281,8 @@
                                             <div id="debitSource">
                                                 <label class="requiredred" for="DebitSource">Debit Source:</label> <input type="text" id="DebitSource" name="DebitSource" />
                                             </div>
-                                            <div id="dispositionReason">
-                                                <label class="requiredred" for="DispositionReason">Disposition Reason:</label> <input type="text" id="DispositionReason" name="DispositionReason" />
+                                            <div id="dispositionComment">
+                                                <label class="requiredred" for="DispositionComment">Disposition Comment:</label> <input type="text" id="DispositionComment" name="DispositionComment" />
                                             </div>
                                             <div id="dispositionType">
                                                 <label class="requiredred" for="DispositionType">Disposition Type:</label> <input type="text" id="DispositionType" name="DispositionType" />
@@ -250,6 +295,9 @@
                                             </div>
                                             <div id="enrollmentID">
                                                 <label class="requiredred" for="EnrollmentID">Enrollment ID</label> <input type="number" id="EnrollmentID" name="EnrollmentID" />
+                                            </div>
+                                            <div id="expirationMMYY">
+                                                <label class="optional" for="ExpirationMMYY">Card Expiration MMYY</label> <input type="text" id="ExpirationMMYY" name="ExpirationMMYY" />
                                             </div>
                                             <div id="fingerprint">
                                                 <label class="optional" for="Fingerprint">Fingerprint</label> <input type="text" id="Fingerprint" name="Fingerprint" />
@@ -297,6 +345,12 @@
                                             <div id="paymentID">
                                                 <label class="requiredred" for="PaymentID">Payment ID:</label> <input type="text" id="PaymentID" name="PaymentID" />
                                             </div>
+                                            <div id="paymentInsuranceCD">
+                                                <label class="requiredred" for="PaymentInsuranceCD">Payment Insurance CD:</label> <input type="text" id="PaymentInsuranceCD" name="PaymentInsuranceCD" />
+                                            </div>
+                                            <div id="paymentSource">
+                                                <label class="requiredred" for="PaymentSource">Payment Source (PPD, TEL, WEB)</label> <input type="text" id="PaymentSource" name="PaymentSource" />
+                                            </div>
                                             <div id="paymentType">
                                                 <label class="requiredred" for="PaymentType">Payment Type:</label> <input type="text" id="PaymentType" name="PaymentType" />
                                             </div>
@@ -322,7 +376,7 @@
                                                 <label class="requiredred" for="ReportID">Report ID:</label> <input type="text" id="ReportID" name="ReportID" />
                                             </div>
                                             <div id="reportingInformation">
-                                                <label class="optional" for="RepotingInformation">Reporting Information:</label> <input type="text" id="ReportingInformation" name="ReportingInformation" />
+                                                <label class="optional" for="ReportingInformation">Reporting Information:</label> <input type="text" id="ReportingInformation" name="ReportingInformation" />
                                             </div>
                                             <div id="reportRequestDate">
                                                 <label class="requiredred" for="ReportRequestDate">Report Request Date:</label> <input type="date" id="ReportRequestDate" name="ReportRequestDate" />
@@ -449,6 +503,7 @@
                     $(".hidden > *").css('display', 'none');
 
                     $("#accountName").show();
+                    $("#accountNumber").show();
                     $("#chargeAccountNumber").show();
 
                     document.getElementById('container1').style.display = "block";
@@ -514,32 +569,31 @@
                 else if (choice === 'ChargePaymentRequest') {
                     console.log('Inside Charge Payment Request');
                     $(".hidden > *").css('display', 'none');
-
+                    $("#accountHolderAddressLine1").show();
+                    $("#accountHolderAddressLine2").show();
+                    $("#accountHolderCity").show();
+                    $("#accountHolderCountryCode").show();
+                    $("#accountHolderFirstName").show();
+                    $("#accountHolderLastName").show();
+                    $("#accountHolderPostalCode").show();
+                    $("#accountHolderRegion").show();
+                    $("#accountNumberToken").show();
+                    $("#accountNumberIndicator").show();
+                    $("#CVN").show();
                     $("#accountName").show();
+                    $("#accountNumber").show();
                     $("#additionalAmounts").show();
                     $("#additionalAmountType").show();
+                    $("#amount").show();
                     $("#autoDisposition").show();
-                    $("#cardHolderAddressLine1").show();
-                    $("#cardHolderAddressLine2").show();
-                    $("#cardHolderCity").show();
-                    $("#cardHolderCountryCode").show();
-                    $("#cardHolderFirstName").show();
-                    $("#cardHolderLastName").show();
-                    $("#cardHolderPostalCode").show();
-                    $("#cardHolderRegion").show();
-                    $("#chargeAccountNumberToken").show();
-                    $("#chargeAccountNumber").show();
-                    $("#chargeAccountNumberIndicator").show();
-                    $("#chargeAmount").show();
-                    $("#chargeCVN").show();
                     $("#chargeSale").show();
-                    $("#chargeExpirationMMYY").show();
-                    $("#chargeSource").show();
                     $("#createdByUser").show();
+                    $("#expirationMMYY").show();
                     $("#merchantRoutingID").show();
                     $("#partnerCustomerKey").show();
                     $("#password").show();
                     $("#paymentDescriptor").show();
+                    $("#paymentSource").show();
                     $("#reportingInformation").show();
                     $("#riskInformation").show();
                     $("#shipToZip").show();
@@ -785,11 +839,12 @@
                     $(".hidden > *").css('display', 'none');
 
                     $("#accountName").show();
-                    $("#chargeAmount").show();
-                    $("#dispositionReason").show();
+                    $("#amount").show();
+                    $("#dispositionComment").show();
                     $("#dispositionType").show();
                     $("#password").show();
                     $("#paymentID").show();
+                    $("#paymentInsuranceCD").show();
                     $("#transactionID").show();
 
                     document.getElementById('container1').style.display = "block";
@@ -837,6 +892,7 @@
                     $("#accountName").show();
                     $("#password").show();
                     $("#paymentID").show();
+                    $("#paymentInsuranceCD").show();
                     $("#transactionID").show();
 
                     document.getElementById('container1').style.display = "block";
