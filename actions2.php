@@ -12,11 +12,12 @@ require('helpers.php');
 //HeCuC75J3s0c938T37KoBw== 
 //gRNLB7d/OHw4vBX5z7xeWHZIRgK11WaABJRQS6VCQ3NAJtDUPVNeDeK+mvQILozR
 
-//https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service
-//https://vsafesandboxtoken.ecustomersupport.com/GatewayV4ProxyJSON/Service
 //<ShoppingCart xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></ShoppingCart>
-//MerchantRoutingID	CNP Credit	SandboxCredit01
-//MerchantRoutingID	CNP Debit	SandboxDebit01
+//MerchantRoutingID	FRAUD-ALL-INSURED
+//MerchantRoutingID	FRAUD-SELECTIVE-INS
+//                      FRAUD-GTWY-ALL-INS 
+//                      FRAUD-GTWY-SEL-INS 
+//                      FULL-ACQUIRING-SVC
 
 //Cards;
 // Success: 5133040901320015
