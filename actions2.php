@@ -309,7 +309,7 @@ debug_to_console('Is FingerPrint HERE:', $_DATA);
                 , $HardCodedAccount
                 , $result['WebSessionID']);
                 echo $dataCollector;
-        
+        debug_to_console('GetSessionTags Instantiating DataCollector ', $dataCollector);
     } else {
         // An error occurred
         $error = $result['ResponseText'];
@@ -346,12 +346,11 @@ debug_to_console('Is FingerPrint HERE:', $_DATA);
     $error = null;
     if ($result['ResponseCode'] == 0) {
         debug_to_console('Successfully called GetDataCollector ', $result);
-        $dataCollectorEndpoint = 'https://collectorsvc.ecustomersupport.com/DCCSProxy/Service/vdccs.js?AccountName=%1&WebSessionID=%2';
-        $embedHtml = sprintf('<p <script type="text/javascript" src=$dataCollectionEndpoint></script> />'
-                , $dataCollectorEndpoint
-                , $result['OrgID']
+        $dataCollectorEndpoint = 'https://collectorsvc.ecustomersupport.com/DCCSProxy/Service/vdccs.js?AccountName=%s&WebSessionID=%s';
+        $embedHtml = sprintf("<p <script type='text/javascript' src=$dataCollectorEndpoint></script> />"
+                , $payload['AccountName']
                 , $result['WebSessionID']);
-        debug_to_console('No WAY THIS WORKS:', $dataCollectorEndpoint);
+        debug_to_console('No WAY THIS WORKS:', $embedHtml);
         echo $embedHtml;
     } else {
         // An error occurred
