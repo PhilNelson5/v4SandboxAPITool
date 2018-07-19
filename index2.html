@@ -345,8 +345,8 @@
                                             <div id="paymentID">
                                                 <label class="requiredred" for="PaymentID">Payment ID:</label> <input type="text" id="PaymentID" name="PaymentID" />
                                             </div>
-                                            <div id="paymentInsuranceCD">
-                                                <label class="requiredred" for="PaymentInsuranceCD">Payment Insurance CD:</label> <input type="text" id="PaymentInsuranceCD" name="PaymentInsuranceCD" />
+                                            <div id="guaranteeCD">
+                                                <label class="requiredred" for="GuaranteeCD">Guarantee CD:</label> <input type="text" id="GuaranteeCD" name="GuaranteeCD" />
                                             </div>
                                             <div id="paymentSource">
                                                 <label class="requiredred" for="PaymentSource">Payment Source (PPD, TEL, WEB)</label> <input type="text" id="PaymentSource" name="PaymentSource" />
@@ -455,8 +455,6 @@
                     $("#acquirerAuthResultCode").show();
                     $("#acquirerAVSResultCode").show();
                     $("#acquirerCVNResultCode").show();
-                    $("#acquirerApprovalCode").show();
-                    $("#acquirerTransactionID").show();
                     $("#acquirerCD").show();
                     $("#authorizedAmount").show();
                     $("#password").show();
@@ -844,7 +842,7 @@
                     $("#dispositionType").show();
                     $("#password").show();
                     $("#paymentID").show();
-                    $("#paymentInsuranceCD").show();
+                    $("#guaranteeCD").show();
                     $("#transactionID").show();
 
                     document.getElementById('container1').style.display = "block";
@@ -892,7 +890,7 @@
                     $("#accountName").show();
                     $("#password").show();
                     $("#paymentID").show();
-                    $("#paymentInsuranceCD").show();
+                    $("#guaranteeCD").show();
                     $("#transactionID").show();
 
                     document.getElementById('container1').style.display = "block";

@@ -13,11 +13,11 @@ require('helpers.php');
 //gRNLB7d/OHw4vBX5z7xeWHZIRgK11WaABJRQS6VCQ3NAJtDUPVNeDeK+mvQILozR
 
 //<ShoppingCart xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></ShoppingCart>
-//MerchantRoutingID	FRAUD-ALL-INSURED
-//MerchantRoutingID	FRAUD-SELECTIVE-INS
-//                      FRAUD-GTWY-ALL-INS 
-//                      FRAUD-GTWY-SEL-INS 
-//                      FULL-ACQUIRING-SVC
+//MerchantRoutingID	FRAUD-ALL-INSURED       Program: 2
+//MerchantRoutingID	FRAUD-SELECTIVE-INS     Program: 3
+//                      FRAUD-GTWY-ALL-INS      Program: 6
+//                      FRAUD-GTWY-SEL-INS      Program: 7
+//                      FULL-ACQUIRING-SVC      Program: 8
 
 //Cards;
 // Success: 5133040901320015
