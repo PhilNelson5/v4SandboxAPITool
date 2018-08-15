@@ -18,6 +18,11 @@ require('helpers.php');
 //                      FRAUD-GTWY-ALL-INS      Program: 6
 //                      FRAUD-GTWY-SEL-INS      Program: 7
 //                      FULL-ACQUIRING-SVC      Program: 8
+//                      FRD-ALL-GUAR
+//                      FRD-SEL-GUAR
+//                      FRD-GTWY-SEL-GUAR
+//                      FRD-GTWY-ALL-GUAR
+//                      FULL-ACQUIRING-SVC
 
 //Cards;
 // Success: 5133040901320015
@@ -29,6 +34,9 @@ $_POST = array_filter( $_POST, 'strlen' );
 
 if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/AuthResult';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "AccountNumberToPermanentToken") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/AccountNumberToPermanentToken';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "BankAccountToTemporaryToken") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/BankAccountToTemporaryToken';
@@ -52,6 +60,9 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargePaymentRequest") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChargePaymentRequest';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargePaymentFraudRequest") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ChargePaymentFraudRequest';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ChargeSale") {
     callChargeSale($_POST);
@@ -84,6 +95,12 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GenerateReport") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GenerateReport';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetPaymentDetail") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GetPaymentDetail';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetPaymentDeviceInfo") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GetPaymentDeviceInfo';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetPaymentStatus") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GetPaymentStatus';
@@ -158,6 +175,9 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     }
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ReversePayment") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ReversePayment';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ReversePaymentRequest") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ReversePaymentRequest';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ReverseCheckPayment") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ReverseCheckPayment';
@@ -255,6 +275,9 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     $post_data = populateDefaultData($_POST);
     debug_to_console('Inside Token One Step with new Token:', $post_data);
     callChargeSale($post_data);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ValidateAccountNumber") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ValidateAccountNumber';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "ValidateChargeAccount") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/ValidateChargeAccount';
     executeAPICall($_POST, $url, $_POST["api_method"]);

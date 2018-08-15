@@ -38,10 +38,16 @@
                                         <option value="ReverseCheckPayment">Reverse Check Payment</option>
                                     </optgroup>
                                     <optgroup label="Unbundled API Calls">
+                                        <option value="AccountNumberToPermanentToken">Account Number To Permanent Token</option>
                                         <option value="AuthResult">Auth Result</option>
                                         <option value="ChargePaymentRequest">Charge Payment Request</option>
+                                        <option value="ChargePaymentFraudRequest">Charge Payment Fraud Request</option>
                                         <option value="Disposition">Disposition</option>
+                                        <option value="GetPaymentDetail">Get Payment Detail</option>
+                                        <option value="GetPaymentDeviceInfo">Get Payment Device Info</option>
                                         <option value="GuaranteePayment">Guarantee Payment</option>
+                                        <option value="ReversePaymentRequest">Reverse Payment Request</option>
+                                        <option value="ValidateAccountNumber">Validate Account Number</option>
                                     </optgroup>
                                     <optgroup label="Knowledge-Based Authentication API Calls">
                                         <option value="ChallengeQuestionAnswer">Challenge Question Answer</option>
@@ -456,11 +462,22 @@
                     $("#acquirerAVSResultCode").show();
                     $("#acquirerCVNResultCode").show();
                     $("#acquirerCD").show();
-                    $("#authorizedAmount").show();
+                    $("#amount").show();
                     $("#password").show();
                     $("#paymentID").show();
                     $("#transactionID").show();
                     
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'AccountNumberToPermanentToken') {
+                    console.log('Inside AccountNumberToPermanentToken');
+                    $(".hidden > *").css('display', 'none');
+
+                    $("#accountName").show();
+                    $("#accountNumber").show();
+                    $("#accountNumberIndicator").show();
+                    $("#password").show();
+
                     document.getElementById('container1').style.display = "block";
                 }
                 else if (choice === 'BankAccountToTemporaryToken') {
@@ -562,6 +579,41 @@
                     $("#encryptionTarget").show();
                     $("#merchantRoutingID").show();
                     $("#password").show();
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'ChargePaymentFraudRequest') {
+                    console.log('Inside Charge Payment Fraud Request');
+                    $(".hidden > *").css('display', 'none');
+                    $("#accountHolderAddressLine1").show();
+                    $("#accountHolderAddressLine2").show();
+                    $("#accountHolderCity").show();
+                    $("#accountHolderCountryCode").show();
+                    $("#accountHolderFirstName").show();
+                    $("#accountHolderLastName").show();
+                    $("#accountHolderPostalCode").show();
+                    $("#accountHolderRegion").show();
+                    $("#accountName").show();
+                    $("#accountNumber").show();
+                    $("#accountNumberIndicator").show();
+                    $("#acquirerAVSResultCode").show();
+                    $("#acquirerAuthResultCode").show();
+                    $("#acquirerCD").show();
+                    $("#acquirerCVNResultCode").show();
+                    $("#amount").show();
+                    $("#autoDisposition").show();
+                    $("#createdByUser").show();
+                    $("#CVN").show();
+                    $("#expirationMMYY").show();
+                    $("#merchantRoutingID").show();
+                    $("#partnerCustomerKey").show();
+                    $("#password").show();
+                    $("#paymentDescriptor").show();
+                    $("#paymentSource").show();
+                    $("#reportingInformation").show();
+                    $("#riskInformation").show();
+                    $("#storeCard").show();
+                    $("#transactionID").show();
+                    $("#webSessionID").show();
                     document.getElementById('container1').style.display = "block";
                 }
                 else if (choice === 'ChargePaymentRequest') {
@@ -865,6 +917,29 @@
 
                     document.getElementById('container1').style.display = "block";
                 }
+                else if (choice === 'GetPaymentDetail') {
+                    console.log('Inside GetPaymentDetail');
+                    $(".hidden > *").css('display', 'none');
+
+                    $("#accountName").show();
+                    $("#password").show();
+                    $("#paymentID").show();
+                    $("#partnerTransactionID").show();
+
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'GetPaymentDeviceInfo') {
+                    console.log('Inside GetPaymentDeviceInfo');
+                    $(".hidden > *").css('display', 'none');
+
+                    $("#accountName").show();
+                    $("#accountNumber").show();
+                    $("#accountNumberIndicator").show();
+                    $("#merchantRoutingID").show();
+                    $("#password").show();
+                    $("#transactionID").show();
+                    document.getElementById('container1').style.display = "block";
+                }
                 else if (choice === 'GetPaymentStatus') {
                     $(".hidden > *").css('display', 'none');
 
@@ -1085,6 +1160,17 @@
                     $("#transactionID").show();
                     document.getElementById('container1').style.display = "block";
                 }
+                else if (choice === 'ReversePaymentRequest') {
+                    console.log('Inside ReversePaymentRequest');
+                    $(".hidden > *").css('display', 'none');
+                    $("#accountName").show();
+                    $("#amount").show();
+                    $("#partnerCustomerKey").show();
+                    $("#password").show();
+                    $("#paymentID").show();
+                    $("#transactionID").show();
+                    document.getElementById('container1').style.display = "block";
+                }
                 else if (choice === 'TestDataCollector') {
                     console.log('Inside Test Data Collector');
                     $(".hidden > *").css('display', 'none');
@@ -1112,6 +1198,32 @@
                     $("#password").show();
                     $("#transactionID").show();
                     document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'ValidateAccountNumber') {
+                    $(".hidden > *").css('display', 'none');
+                    $("#accountHolderAddressLine1").show();
+                    $("#accountHolderAddressLine2").show();
+                    $("#accountHolderCity").show();
+                    $("#accountHolderCountryCode").show();
+                    $("#accountHolderFirstName").show();
+                    $("#accountHolderLastName").show();
+                    $("#accountHolderPostalCode").show();
+                    $("#accountHolderRegion").show();
+                    $("#accountName").show();
+                    $("#accountNumber").show();
+                    $("#accountNumberIndicator").show();
+                    $("#CVN").show();
+                    $("#ExpirationMMYY").show();
+                    $("#merchantRoutingID").show();
+                    $("#partnerCustomerKey").show();
+                    $("#password").show();
+                    $("#paymentDescriptor").show();
+                    $("#paymentSource").show();
+                    $("#storeCard").show();
+                    $("#transactionID").show();
+
+                    document.getElementById('container1').style.display = "block";
+
                 }
                 else if (choice === 'ValidateChargeAccount') {
                     $(".hidden > *").css('display', 'none');
