@@ -476,7 +476,6 @@ function populateDefaultData($post_data) {
     $post_data['CardHolderLastName'] = 'Doe';
     $post_data['CardHolderCity'] = 'Tigard';
     $post_data['CardHolderRegion'] = 'OR';
-    $post_data['IsTempToken'] = true;
     $post_data['RiskInformation'] = '<ShoppingCart xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></ShoppingCart>';
 
     return $post_data;
