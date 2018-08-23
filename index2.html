@@ -78,6 +78,9 @@
                                     <optgroup label="DATACOLLECTOR">
                                         <option value="TestDataCollector">Test Data Collector Call</option>
                                     </optgroup>
+                                    <optgroup label="PROJECT RADAR">
+                                        <option value="RadarScore">Get Radar Score</option>
+                                    </optgroup>
                                 </select>
 
                                 <div id="footer">
@@ -95,12 +98,18 @@
                                             <div id="accountHolderCountryCode">
                                                 <label class="requiredred" for="AccountHolderCountryCode">Country Code:</label> <input type="text" id="AccountHolderCountryCode" name="AccountHolderCountryCode" />
                                             </div>
+                                            <div id="accountHolderEmail">
+                                                <label class="optional" for="AccountHolderEmail">Account Holder Email:</label> <input type="text" id="AccountHolderEmail" name="AccountHolderEmail" />
+                                            </div>
                                             <div id="accountHolderFirstName">
                                                 <label class="requiredred" for="AccountHolderFirstName">First Name:</label> <input type="text" id="AccountHolderFirstName" name="AccountHolderFirstName" />
                                             </div>
                                             <div id="accountHolderLastName">
                                                 <label class="requiredred" for="AccountHolderLastName">Last Name:</label> <input type="text" id="AccountHolderLastName" name="AccountHolderLastName" />
                                             </div> 
+                                            <div id="accountHolderPhoneNumber">
+                                                <label class="optional" for="AccountHolderPhoneNumber">Account Holder Phone Number:</label> <input type="text" id="AccountHolderPhoneNumber" name="AccountHolderPhoneNumber" />
+                                            </div>
                                             <div id="accountHolderPostalCode">
                                                 <label class="requiredred" for="AccountHolderPostalCode">Postal Code:</label> <input type="text" id="AccountHolderPostalCode" name="AccountHolderPostalCode" />
                                             </div> 
@@ -1066,6 +1075,25 @@
                     $("#paymentDeviceOnFileID").show();
                     $("#walletID").show();
 
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'RadarScore') {
+                    console.log('Inside RadarScore');
+                    $(".hidden > *").css('display', 'none');
+                    $("#accountHolderAddressLine1").show();
+                    $("#accountHolderAddressLine2").show();
+                    $("#accountHolderCity").show();
+                    $("#accountHolderCountryCode").show();
+                    $("#accountHolderEmail").show();
+                    $("#accountHolderFirstName").show();
+                    $("#accountHolderLastName").show();
+                    $("#accountHolderPhoneNumber").show();
+                    $("#accountHolderPostalCode").show();
+                    $("#accountHolderRegion").show();
+                    $("#accountName").show();
+                    $("#merchantRoutingID").show();
+                    $("#password").show();
+                    $("#transactionID").show();
                     document.getElementById('container1').style.display = "block";
                 }
                 else if (choice === 'RecurringPaymentEnroll') {

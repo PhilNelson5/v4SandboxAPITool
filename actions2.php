@@ -128,6 +128,9 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "PaymentDeviceOnFileRemove") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/PaymentDeviceOnFileRemove';
     executeAPICall($_POST, $url, $_POST["api_method"]);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "RadarScore") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/RadarScore';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "RecurringPaymentEnroll") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/RecurringPaymentEnroll';
     executeAPICall($_POST, $url, $_POST["api_method"]);
