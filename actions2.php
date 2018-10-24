@@ -25,6 +25,7 @@ require('helpers.php');
 //                      FULL-ACQUIRING-SVC
 
 //Cards;
+// Pended: 4628610683834808
 // Success: 5133040901320015
 //temp token: 5133800000000036
 //perm token: 5133900000000034
@@ -99,8 +100,8 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetPaymentDetail") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GetPaymentDetail';
     executeAPICall($_POST, $url, $_POST["api_method"]);
-} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetPaymentDeviceInfo") {
-    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GetPaymentDeviceInfo';
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetCardInfo") {
+    $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GetCardInfo';
     executeAPICall($_POST, $url, $_POST["api_method"]);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "GetPaymentStatus") {
     $url = 'https://vsafesandbox.ecustomersupport.com/GatewayV4Proxy/Service/GetPaymentStatus';
@@ -372,9 +373,10 @@ debug_to_console('Is FingerPrint HERE:', $_DATA);
     $error = null;
     if ($result['ResponseCode'] == 0) {
         debug_to_console('Successfully called GetDataCollector ', $result);
-        $dataCollectorEndpoint = 'https://collectorsvc.ecustomersupport.com/DCCSProxy/Service/vdccs.js?AccountName=%s&WebSessionID=%s';
+        $dataCollectorEndpoint = 'https://collectorsvc.ecustomersupport.com/DCCSProxy/Service/vdccs.js?AccountName=VestaTest&WebSessionID=%s';
+       // $dataCollectorEndpoint = 'https://riskcsproxy.ecustomersupport.com/DCCSProxy/Service/vdccs.js?AccountName=newseasonsmarket&WebSessionID=%s';
         $embedHtml = sprintf("<p <script type='text/javascript' src=$dataCollectorEndpoint></script> />"
-                , $payload['AccountName']
+  //             , $payload['AccountName']
                 , $result['WebSessionID']);
         debug_to_console('No WAY THIS WORKS:', $embedHtml);
         echo $embedHtml;

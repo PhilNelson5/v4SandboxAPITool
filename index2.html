@@ -44,7 +44,7 @@
                                         <option value="ChargePaymentFraudRequest">Charge Payment Fraud Request</option>
                                         <option value="Disposition">Disposition</option>
                                         <option value="GetPaymentDetail">Get Payment Detail</option>
-                                        <option value="GetPaymentDeviceInfo">Get Payment Device Info</option>
+                                        <option value="GetCardInfo">Get Card Info</option>
                                         <option value="GuaranteePayment">Guarantee Payment</option>
                                         <option value="ReversePaymentRequest">Reverse Payment Request</option>
                                         <option value="ValidateAccountNumber">Validate Account Number</option>
@@ -177,7 +177,8 @@
                                                 <label class="requiredred" for="AuthorizedAmount">Authorized Amount:</label> <input type="text" id="AuthorizedAmount" name="AuthorizedAmount" />
                                             </div>
                                             <div id="autoDisposition">
-                                                <label class="requiredred" for="AutoDisposition">Auto Disposition:</label> <input type="checkbox" id="AutoDisposition" name="AutoDisposition" value="true"/>
+                                                <label class="requiredred" for="AutoDisposition">Auto Disposition:</label> <input type="checkbox" id="AutoDisposition" name="AutoDisposition1" />
+                                                <input type="hidden" value="0" id="hdnAutoDisposition" name="AutoDisposition" />
                                             </div>
                                             <div id="bankRoutingNumber">
                                                 <label class="requiredred" for="BankRoutingNumber">Bank Routing Number:</label> <input type="number" id="BankRoutingNumber" name="BankRoutingNumber" />
@@ -274,6 +275,9 @@
                                             </div>
                                             <div id="CVN">
                                                 <label class="optional" for="CVN">Charge CVN:</label> <input type="number" id="CVN" name="CVN" />
+                                            </div>
+                                            <div id="CVV">
+                                                <label class="optional" for="CVV">Charge CVV:</label> <input type="number" id="CVV" name="CVV" />
                                             </div>
                                             <div id="dayOfBirth">
                                                 <label class="optional" for="DayOfBirth">Day of Birth:</label> <input type="text" id="DayOfBirth" name="DayOfBirth" />
@@ -402,7 +406,8 @@
                                                 <label class="optional" for="ShipToZip">Ship To Zip:</label> <input type="text" id="ShipToZip" name="ShipToZip" />
                                             </div>
                                             <div id="storeCard">
-                                                <label class="optional" for="StoreCard">Store Card:</label> <input type="checkbox" id="StoreCard" name="StoreCard" value="true"/>
+                                                <label class="optional" for="StoreCard">Store Card:</label> <input type="checkbox" id="StoreCard" name="StoreCard1" />
+                                                <input type="hidden" value="0" id="hdnStoreCard" name="StoreCard" />
                                             </div>
                                             <div id="storeCheckAccount">
                                                 <label class="optional" for="StoreCheckAccount">Store Check Account:</label> <input type="checkbox" id="StoreCheckAccount" name="StoreCheckAccount" value="true"/>
@@ -454,6 +459,18 @@
                 console.log('Resetting Form valaues');
                 document.getElementById("form1").reset();
             }
+        </script>
+        <script type="text/javascript">
+            $('#AutoDisposition').on('change', function(){
+                console.log('auto disposition changed');
+                $('#hdnAutoDisposition').val(this.checked ? 1 : 0);
+            });
+        </script>
+        <script type="text/javascript">
+            $('#StoreCard').on('change', function(){
+                console.log('store card changed');
+                $('#hdnStoreCard').val(this.checked ? 1 : 0);
+            });
         </script>
         <script type="text/javascript">
             function handleSelection(choice) {
@@ -606,7 +623,7 @@
                     $("#amount").show();
                     $("#autoDisposition").show();
                     $("#createdByUser").show();
-                    $("#CVN").show();
+                    $("#CVV").show();
                     $("#expirationMMYY").show();
                     $("#merchantRoutingID").show();
                     $("#partnerCustomerKey").show();
@@ -633,7 +650,7 @@
                     $("#accountHolderRegion").show();
                     $("#accountNumberToken").show();
                     $("#accountNumberIndicator").show();
-                    $("#CVN").show();
+                    $("#CVV").show();
                     $("#accountName").show();
                     $("#accountNumber").show();
                     $("#additionalAmounts").show();
@@ -931,8 +948,8 @@
 
                     document.getElementById('container1').style.display = "block";
                 }
-                else if (choice === 'GetPaymentDeviceInfo') {
-                    console.log('Inside GetPaymentDeviceInfo');
+                else if (choice === 'GetCardInfo') {
+                    console.log('Inside GetCardInfo');
                     $(".hidden > *").css('display', 'none');
 
                     $("#accountName").show();
@@ -1234,7 +1251,7 @@
                     $("#accountName").show();
                     $("#accountNumber").show();
                     $("#accountNumberIndicator").show();
-                    $("#CVN").show();
+                    $("#CVV").show();
                     $("#ExpirationMMYY").show();
                     $("#merchantRoutingID").show();
                     $("#partnerCustomerKey").show();
