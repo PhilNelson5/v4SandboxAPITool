@@ -180,8 +180,7 @@
                                                 <label class="requiredred" for="AuthorizedAmount">Authorized Amount:</label> <input type="text" id="AuthorizedAmount" name="AuthorizedAmount" />
                                             </div>
                                             <div id="autoDisposition">
-                                                <label class="requiredred" for="AutoDisposition">Auto Disposition:</label> <input type="checkbox" id="AutoDisposition" name="AutoDisposition1" />
-                                                <input type="hidden" value="0" id="hdnAutoDisposition" name="AutoDisposition" />
+                                                <label class="requiredred" for="AutoDisposition">Auto Disposition:</label> <input type="checkbox" id="AutoDisposition" name="AutoDisposition" />
                                             </div>
                                             <div id="bankRoutingNumber">
                                                 <label class="requiredred" for="BankRoutingNumber">Bank Routing Number:</label> <input type="number" id="BankRoutingNumber" name="BankRoutingNumber" />
@@ -409,8 +408,7 @@
                                                 <label class="optional" for="ShipToZip">Ship To Zip:</label> <input type="text" id="ShipToZip" name="ShipToZip" />
                                             </div>
                                             <div id="storeCard">
-                                                <label class="optional" for="StoreCard">Store Card:</label> <input type="checkbox" id="StoreCard" name="StoreCard1" />
-                                                <input type="hidden" value="0" id="hdnStoreCard" name="StoreCard" />
+                                                <label class="optional" for="StoreCard">Store Card:</label> <input type="checkbox" id="StoreCard" name="StoreCard" />
                                             </div>
                                             <div id="storeCheckAccount">
                                                 <label class="optional" for="StoreCheckAccount">Store Check Account:</label> <input type="checkbox" id="StoreCheckAccount" name="StoreCheckAccount" value="true"/>
@@ -469,13 +467,13 @@
         <script type="text/javascript">
             $('#AutoDisposition').on('change', function(){
                 console.log('auto disposition changed');
-                $('#hdnAutoDisposition').val(this.checked ? 1 : 0);
+                $('#AutoDisposition').val(this.checked ? 1 : 0);
             });
         </script>
         <script type="text/javascript">
             $('#StoreCard').on('change', function(){
                 console.log('store card changed');
-                $('#hdnStoreCard').val(this.checked ? 1 : 0);
+                $('#StoreCard').val(this.checked ? 1 : 0);
             });
         </script>
         <script type="text/javascript">
