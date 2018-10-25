@@ -116,6 +116,9 @@
                                             <div id="accountHolderRegion">
                                                 <label class="requiredred" for="AccountHolderRegion">Region:</label> <input type="text" id="AccountHolderRegion" name="AccountHolderRegion" />
                                             </div>
+                                            <div id="cardNetworkTransactionID">
+                                                <label class="optional" for="CardNetworkTransactionID">Card Network TransactionID:</label> <input type="text" id="CardNetworkTransactionID" name="CardNetworkTransactionID" />
+                                            </div>
                                             <div id="cardTrack1Data">
                                                 <label class="optional" for="CardTrack1Data">Card Track1 Data:</label> <input type="text" id="CardTrack1Data" name="CardTrack1Data" />
                                             </div>
@@ -421,6 +424,9 @@
                                             <div id="transactionID">
                                                 <label class="requiredred" for="TransactionID">Transaction ID:</label> <input type="text" id="TransactionID" name="TransactionID" />
                                             </div>
+                                            <div id="transactionType">
+                                                <label class="optional" for="TransactionType">Transaction Type:</label> <input type="text" id="TransactionType" name="TransactionType" />
+                                            </div>
                                             <div id="type">
                                                 <label class="requiredred" for="Type">Type:</label> <input type="text" id="Type" name="Type" />
                                             </div>
@@ -650,6 +656,7 @@
                     $("#accountHolderRegion").show();
                     $("#accountNumberToken").show();
                     $("#accountNumberIndicator").show();
+                    $("#cardNetworkTransactionID").show();
                     $("#CVV").show();
                     $("#accountName").show();
                     $("#accountNumber").show();
@@ -670,6 +677,7 @@
                     $("#shipToZip").show();
                     $("#storeCard").show();
                     $("#transactionID").show();
+                    $("#transactionType").show();
                     $("#webSessionID").show();
                     document.getElementById('container1').style.display = "block";
                 }
@@ -1251,6 +1259,7 @@
                     $("#accountName").show();
                     $("#accountNumber").show();
                     $("#accountNumberIndicator").show();
+                    $("#cardNetworkTransactionID").show();
                     $("#CVV").show();
                     $("#ExpirationMMYY").show();
                     $("#merchantRoutingID").show();
@@ -1260,6 +1269,7 @@
                     $("#paymentSource").show();
                     $("#storeCard").show();
                     $("#transactionID").show();
+                    $("#transactionType").show();
 
                     document.getElementById('container1').style.display = "block";
 
