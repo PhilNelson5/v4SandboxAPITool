@@ -223,6 +223,18 @@ if (isset($_POST["api_method"]) AND $_POST["api_method"] == "AuthResult") {
     $_POST['WebSessionID'] = $webSessionID;
 
     debug_to_console('Inside Test Data Collector:', $_POST);
+} elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "TMLookup") {
+    $url = 'https://h-api.online-metrix.net/api/session-query';
+    
+    $_POST['api_key'] = 'f8phzmmf9dpjlpftik5g4qf2ha7pqxem';
+    $_POST['event_type'] = 'PAYMENT';
+    $_POST['org_id'] = 'f33plvkc';
+    $_POST['session_id'] = $_POST['WebSessionID'];
+    $_POST['transaction_id'] = $_POST["TransactionID"];
+    $_POST['service_type'] = 'session-policy';
+    executeAPICall($_POST, $url, $_POST["api_method"]);
+
+    debug_to_console('Inside TMLookup:', $_POST);
 } elseif (isset($_POST["api_method"]) AND $_POST["api_method"] == "TokenOneStep") {
     $newToken = '';
     $newToken = getToken($_POST);

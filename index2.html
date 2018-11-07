@@ -81,6 +81,9 @@
                                     <optgroup label="PROJECT RADAR">
                                         <option value="RadarScore">Get Radar Score</option>
                                     </optgroup>
+                                    <optgroup label="UAT THREATMETRIX LOOKUP">
+                                        <option value="TMLookup">TM Session Lookup</option>
+                                    </optgroup>
                                 </select>
 
                                 <div id="footer">
@@ -1223,6 +1226,14 @@
                     $("#accountName").show();
                     $("#password").show();
                     $("#transactionID").show();
+                    document.getElementById('container1').style.display = "block";
+                }
+                else if (choice === 'TMLookup') {
+                    $(".hidden > *").css('display', 'none');
+                    console.log('Inside TMLookup');
+                    $("#transactionID").show();
+                    $("#webSessionID").show();
+
                     document.getElementById('container1').style.display = "block";
                 }
                 else if (choice === 'TokenTwoStep') {
